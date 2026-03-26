@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamos em Manutenção</title>
+    <style>
+        /* RESET BÁSICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* ESTILOS DO FUNDO - Usando o gradiente da sua imagem */
+        body {
+            background: #000c1e; /* Cor de fundo escura */
+            background: linear-gradient(135deg, #000c1e 0%, #002b5c 50%, #003f8a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+            overflow: hidden; /* Evita barras de rolagem desnecessárias */
+        }
+
+        /* CONTAINER PRINCIPAL CENTRALIZADO */
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 900px; /* Largura máxima maior para acomodar a logo grande */
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ÁREA DA LOGO GRANDE NO MEIO */
+        .logo-container {
+            margin-bottom: 50px; /* Espaço generoso abaixo da logo */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Estilo para a imagem da logo real */
+        .logo-container img {
+            max-width: 600px; /* Largura máxima da sua logo - AJUSTE AQUI SE NECESSÁRIO */
+            height: auto;
+            /* Sombra leve para dar destaque no fundo escuro, se a logo for escura */
+            /* filter: drop-shadow(0 0 10px rgba(255,255,255,0.1)); */
+        }
+
+        /* Placeholder visível caso não encontre a imagem */
+        .logo-placeholder {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.05); /* Cinza muito escuro e translúcido */
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* TEXTOS */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #b0bec5; /* Cinza claro para legibilidade */
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* DETALHE VISUAL - Barra de progresso animada */
+        .loader-bar {
+            width: 100%;
+            max-width: 400px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .loader-progress {
+            height: 100%;
+            width: 0;
+            background-color: #1e88e5; /* Azul vibrante das suas cores */
+            border-radius: 3px;
+            animation: progressLoop 3s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(30, 136, 229, 0.5);
+        }
+
+        @keyframes progressLoop {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; text-align: right; margin-left: auto;}
+        }
+
+        /* RODAPÉ SIMPLES */
+        .footer-info {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVIDADE PARA TELAS PEQUENAS */
+        @media (max-width: 768px) {
+            .logo-container img {
+                max-width: 80%; /* Logo menor em celulares */
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo da Empresa" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
+            
+            <div id="placeholder" class="logo-placeholder" style="display:none;">
+                SUA LOGO AQUI
+            </div>
+        </div>
+
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        
+        <h1>Estamos em Manutenção</h1>
+        <p>Estamos trabalhando em melhorias para oferecer uma experiência incrível. Voltaremos em breve!</p>
+
+        <div class="footer-info">
+            &copy; 2023 Sua Empresa. Todos os direitos reservados.
+        </div>
+    </div>
+
+</body>
+</html>
